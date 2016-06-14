@@ -1,0 +1,1191 @@
+[
+  {
+    "name": "ArrayInitialiser",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "members",
+        "type": "Array<Expression | Expansion>"
+      }
+    ]
+  },
+  {
+    "name": "AssignOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "assignee",
+        "type": "Assignee"
+      },
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "BitAndOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "BitNotOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "BitOrOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "BitXorOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Block",
+    "extends": "Node",
+    "properties": [
+      {
+        "name": "statements",
+        "type": "Array<Statement>"
+      },
+      {
+        "name": "inline",
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "name": "Bool",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "data",
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "name": "BoundFunction",
+    "extends": "Expression",
+    "groups": ["Functions"],
+    "properties": [
+      {
+        "name": "parameters",
+        "type": "Array<Parameter>"
+      },
+      {
+        "name": "body",
+        "type": "?Block"
+      }
+    ]
+  },
+  {
+    "name": "Break",
+    "extends": "Statement",
+    "properties": []
+  },
+  {
+    "name": "ChainedComparisonOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Class",
+    "symbol": "Class_",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "nameAssignee",
+        "type": "?Assignee"
+      },
+      {
+        "name": "parent",
+        "type": "?Expression"
+      },
+      {
+        "name": "body",
+        "type": "?Block"
+      }
+    ]
+  },
+  {
+    "name": "ClassProtoAssignOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "assignee",
+        "type": "Assignee"
+      },
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "CompoundAssignOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "assignee",
+        "type": "Assignee"
+      },
+      {
+        "name": "expression",
+        "type": "Expression"
+      },
+      {
+        "name": "op",
+        "type": "'EQOp' | 'NEQOp' | 'LogicalAndOp' | 'LogicalOrOp' | 'PlusOp' | 'SubtractOp' | 'MultiplyOp' | 'DivideOp' | 'RemOp' | 'ModuloOp' | 'BitAndOp' | 'BitOrOp' | 'BitXorOp' | 'LTOp' | 'GTOp' | 'LTEOp' | 'GTEOp' | 'OfOp' | 'ExistsOp' | 'InstanceofOp' | 'LeftShiftOp' | 'SignedRightShiftOp' | 'UnsignedRightShiftOp' | 'ExpOp' | 'FloorDivideOp'"
+      }
+    ]
+  },
+  {
+    "name": "Conditional",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "condition",
+        "type": "Expression"
+      },
+      {
+        "name": "consequent",
+        "type": "Block"
+      },
+      {
+        "name": "alternate",
+        "type": "?Block"
+      },
+      {
+        "name": "isUnless",
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "name": "Constructor",
+    "extends": "Statement",
+    "properties": [
+      {
+        "name": "assignee",
+        "type": "Assignee"
+      },
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Continue",
+    "extends": "Statement",
+    "properties": []
+  },
+  {
+    "name": "DefaultParam",
+    "extends": "Node",
+    "properties": [
+      {
+        "name": "param",
+        "type": "Parameter"
+      },
+      {
+        "name": "default",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "DeleteOp",
+    "extends": "Statement",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "DivideOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "DoOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "DynamicMemberAccessOp",
+    "extends": "Expression",
+    "groups": ["Assignee", "Parameter"],
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      },
+      {
+        "name": "indexingExpr",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "EQOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "ExistsOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "ExpOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Expansion",
+    "extends": "Node",
+    "properties": []
+  },
+  {
+    "name": "Expression",
+    "extends": "Statement",
+    "properties": [],
+    "abstract": true
+  },
+  {
+    "name": "ExtendsOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Float",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "data",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "name": "FloorDivideOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "ForIn",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "keyAssignee",
+        "type": "?Assignee"
+      },
+      {
+        "name": "valAssignee",
+        "type": "Assignee"
+      },
+      {
+        "name": "target",
+        "type": "Expression"
+      },
+      {
+        "name": "step",
+        "type": "?Expression"
+      },
+      {
+        "name": "filter",
+        "type": "?Expression"
+      },
+      {
+        "name": "body",
+        "type": "Block"
+      }
+    ]
+  },
+  {
+    "name": "ForOf",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "keyAssignee",
+        "type": "Assignee"
+      },
+      {
+        "name": "valAssignee",
+        "type": "?Assignee"
+      },
+      {
+        "name": "target",
+        "type": "Expression"
+      },
+      {
+        "name": "filter",
+        "type": "?Expression"
+      },
+      {
+        "name": "body",
+        "type": "Block"
+      }
+    ]
+  },
+  {
+    "name": "Function",
+    "symbol": "Function_",
+    "extends": "Expression",
+    "groups": ["Functions"],
+    "properties": [
+      {
+        "name": "parameters",
+        "type": "Array<Parameter>"
+      },
+      {
+        "name": "body",
+        "type": "?Block"
+      }
+    ]
+  },
+  {
+    "name": "FunctionApplication",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "function",
+        "type": "Expression"
+      },
+      {
+        "name": "arguments",
+        "type": "Array<Expression | Expansion>"
+      }
+    ]
+  },
+  {
+    "name": "GeneratorFunction",
+    "extends": "Expression",
+    "groups": ["Functions"],
+    "properties": [
+      {
+        "name": "parameters",
+        "type": "Array<Parameter>"
+      },
+      {
+        "name": "body",
+        "type": "Block"
+      }
+    ]
+  },
+  {
+    "name": "GTEOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "GTOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Herestring",
+    "extends": "Expression",
+    "properties": []
+  },
+  {
+    "name": "Identifier",
+    "extends": "Expression",
+    "groups": ["Assignee", "Parameter"],
+    "properties": []
+  },
+  {
+    "name": "InOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      },
+      {
+        "name": "isNot",
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "name": "InstanceofOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Int",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "data",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "name": "JavaScript",
+    "extends": "Expression",
+    "properties": []
+  },
+  {
+    "name": "LTEOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "LTOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "LeftShiftOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "LogicalAndOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "LogicalNotOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "LogicalOrOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "MemberAccessOp",
+    "extends": "Expression",
+    "groups": ["Assignee", "Parameter"],
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "MultiplyOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "NEQOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "NewOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "ctor",
+        "type": "Expression"
+      },
+      {
+        "name": "arguments",
+        "type": "Array<Expression>"
+      }
+    ]
+  },
+  {
+    "name": "Node",
+    "properties": [
+      {
+        "name": "raw",
+        "type": "string"
+      },
+      {
+        "name": "line",
+        "type": "number"
+      },
+      {
+        "name": "column",
+        "type": "number"
+      },
+      {
+        "name": "range",
+        "type": "[ number, number ]"
+      },
+      {
+        "name": "virtual?",
+        "type": "boolean"
+      }
+    ],
+    "abstract": true
+  },
+  {
+    "name": "Null",
+    "extends": "Expression",
+    "properties": []
+  },
+  {
+    "name": "ObjectInitialiser",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "members",
+        "type": "Array<ObjectInitialiserMember>"
+      }
+    ]
+  },
+  {
+    "name": "ObjectInitialiserMember",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "key",
+        "type": "Identifier | String"
+      },
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "OfOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "PlusOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "PostDecrementOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "PostIncrementOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "PreDecrementOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "PreIncrementOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Program",
+    "extends": "Node",
+    "properties": [
+      {
+        "name": "body",
+        "type": "?Block"
+      }
+    ]
+  },
+  {
+    "name": "ProtoMemberAccessOp",
+    "extends": "Expression",
+    "groups": ["Assignee", "Parameter"],
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Range",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      },
+      {
+        "name": "isInclusive",
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "name": "RegExp",
+    "extends": "Expression",
+    "properties": []
+  },
+  {
+    "name": "RemOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Rest",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Return",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "?Expression"
+      }
+    ]
+  },
+  {
+    "name": "SeqOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "SignedRightShiftOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Slice",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      },
+      {
+        "name": "left",
+        "type": "?Expression"
+      },
+      {
+        "name": "right",
+        "type": "?Expression"
+      }
+    ]
+  },
+  {
+    "name": "SoakedDynamicMemberAccessOp",
+    "extends": "DynamicMemberAccessOp",
+    "groups": ["Assignee", "Parameter"],
+    "properties": []
+  },
+  {
+    "name": "SoakedFunctionApplication",
+    "extends": "FunctionApplication",
+    "properties": []
+  },
+  {
+    "name": "SoakedMemberAccessOp",
+    "extends": "MemberAccessOp",
+    "groups": ["Assignee", "Parameter"],
+    "properties": []
+  },
+  {
+    "name": "Spread",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Statement",
+    "extends": "Node",
+    "properties": [],
+    "abstract": true
+  },
+  {
+    "name": "String",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "data",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "name": "SubtractOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Super",
+    "extends": "Expression",
+    "properties": []
+  },
+  {
+    "name": "Switch",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "?Expression"
+      },
+      {
+        "name": "cases",
+        "type": "Array<SwitchCase>"
+      },
+      {
+        "name": "alternate",
+        "type": "?Block"
+      }
+    ]
+  },
+  {
+    "name": "SwitchCase",
+    "extends": "Node",
+    "properties": [
+      {
+        "name": "conditions",
+        "type": "Array<Expression>"
+      },
+      {
+        "name": "consequent",
+        "type": "Block"
+      }
+    ]
+  },
+  {
+    "name": "TemplateLiteral",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "quasis",
+        "type": "Array<String>"
+      },
+      {
+        "name": "expressions",
+        "type": "Array<Expression>"
+      }
+    ]
+  },
+  {
+    "name": "This",
+    "extends": "Expression",
+    "properties": []
+  },
+  {
+    "name": "Throw",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Try",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "body",
+        "type": "Block"
+      },
+      {
+        "name": "catchAssignee",
+        "type": "?Assignee"
+      },
+      {
+        "name": "catchBody",
+        "type": "?Block"
+      },
+      {
+        "name": "finallyBody",
+        "type": "?Block"
+      }
+    ]
+  },
+  {
+    "name": "TypeofOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "UnaryExistsOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "UnaryNegateOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "UnaryPlusOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "Undefined",
+    "extends": "Expression",
+    "properties": []
+  },
+  {
+    "name": "UnsignedRightShiftOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "While",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "condition",
+        "type": "Expression"
+      },
+      {
+        "name": "guard",
+        "type": "?Expression"
+      },
+      {
+        "name": "body",
+        "type": "Block"
+      },
+      {
+        "name": "isUntil",
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "name": "Yield",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
+    "name": "YieldFrom",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "expression",
+        "type": "Expression"
+      }
+    ]
+  }
+]
