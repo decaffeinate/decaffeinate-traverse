@@ -190,7 +190,7 @@
       },
       {
         "name": "consequent",
-        "type": "Block"
+        "type": "?Block"
       },
       {
         "name": "alternate",

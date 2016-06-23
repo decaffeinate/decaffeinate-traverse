@@ -153,7 +153,7 @@ export type CompoundAssignOp = {
 export type Conditional = {
   type: 'Conditional';
   condition: Expression;
-  consequent: Block;
+  consequent: ?Block;
   alternate: ?Block;
   isUnless: boolean;
   raw: string;

@@ -467,7 +467,9 @@ export default class Visitor extends BasicVisitor {
 
   visitConditional(node: Conditional) {
     this.descend(node.condition);
-    this.descend(node.consequent);
+    if (node.consequent) {
+      this.descend(node.consequent);
+    }
     if (node.alternate) {
       this.descend(node.alternate);
     }
