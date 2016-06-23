@@ -9,6 +9,7 @@
     "preflow": "npm run build",
     "flow": "flow check",
     "test": "mocha",
+    "prepublish": "npm run build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
