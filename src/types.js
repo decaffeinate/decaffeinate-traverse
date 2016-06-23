@@ -313,7 +313,7 @@ export type FloorDivideOp = {
 export type ForIn = {
   type: 'ForIn';
   keyAssignee: ?Assignee;
-  valAssignee: Assignee;
+  valAssignee: ?Assignee;
   target: Expression;
   step: ?Expression;
   filter: ?Expression;

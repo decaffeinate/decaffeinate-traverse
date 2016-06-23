@@ -385,7 +385,7 @@
       },
       {
         "name": "valAssignee",
-        "type": "Assignee"
+        "type": "?Assignee"
       },
       {
         "name": "target",

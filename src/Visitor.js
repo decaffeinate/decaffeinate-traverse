@@ -542,7 +542,9 @@ export default class Visitor extends BasicVisitor {
     if (node.keyAssignee) {
       this.descend(node.keyAssignee);
     }
-    this.descend(node.valAssignee);
+    if (node.valAssignee) {
+      this.descend(node.valAssignee);
+    }
     this.descend(node.target);
     if (node.step) {
       this.descend(node.step);
