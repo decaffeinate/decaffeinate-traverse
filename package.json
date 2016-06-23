@@ -5,7 +5,7 @@
   "jsnext:main": "dist/decaffeinate-traverse.mjs",
   "scripts": {
     "prebuild": "rm -rf dist/ && mkdir -p dist/",
-    "build": "./script/build && rollup -c",
+    "build": "node -r babel-register ./script/build && rollup -c",
     "preflow": "npm run build",
     "flow": "flow check",
     "test": "mocha",

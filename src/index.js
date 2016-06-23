@@ -1,4 +1,4 @@
 /* @flow */
 
-export { default as Visitor } from './visitor.js';
+export { default as Visitor } from './Visitor.js';
 export { default as traverse } from './traverse.js';
