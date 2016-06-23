@@ -1,4 +1,4 @@
-#!/usr/bin/env node -r babel-register
+#!/usr/bin/env node
 
 import { createWriteStream } from 'fs';
 import { join } from 'path';
@@ -30,14 +30,14 @@ let getType = memoize(name => types.find(t => t.name === name));
 
 let expandType = memoize(name => {
   let type = Object.assign({}, getType(name));
-  
+
   if (type.extends) {
     type.properties = [
       ...type.properties,
       ...expandType(type.extends).properties
     ];
   }
-  
+
   return type;
 });
 
@@ -52,7 +52,7 @@ function expandTypes(types) {
 
 function getAncestorTypes(name) {
   let type = getType(name);
-  
+
   if (!type.extends) {
     return [];
   } else {
@@ -83,11 +83,11 @@ function unionTypes(types) {
   });
 
   let result = [];
-  
+
   unionMap.forEach((types, name) => {
     result.push({ name, types });
   });
-  
+
   return result;
 }
 
@@ -103,18 +103,18 @@ function containsNodeType(typeSignature) {
     switch (flowType && flowType.type) {
       case 'NullableTypeAnnotation':
         return flowTypeContainsNodeType(flowType.typeAnnotation);
-      
+
       case 'UnionTypeAnnotation':
         return flowType.types.some(flowTypeContainsNodeType);
-      
+
       case 'GenericTypeAnnotation':
         return allNodeTypes.has(flowType.id.name) || flowTypeContainsNodeType(flowType.typeParameters);
-      
+
       case 'TypeParameterInstantiation':
         return flowType.params.some(flowTypeContainsNodeType);
     }
   }
-  
+
   return flowTypeContainsNodeType(parseFlowTypeSignature(typeSignature));
 }
 
@@ -137,7 +137,7 @@ expandedTypes
 
 unions.forEach(type => {
   interfaceFile.write(`declare type ${getTypeSymbol(type.name)} =\n`);
-  
+
   type.types.forEach((type, i, types) => {
     if (i === types.length - 1) {
       interfaceFile.write(`  ${getTypeSymbol(type)};\n\n`);
@@ -209,18 +209,18 @@ expandedTypes
   .filter(type => !type.abstract)
   .forEach((type, i, types) => {
     let visitsChildren = false;
-    
+
     visitorFile.write(`  visit${type.name}(node: ${getTypeSymbol(type.name)}) {\n`);
     type.properties.forEach(property => {
       let match = property.type.match(/^Array<(.+)>$/);
       let type = property.type;
       let isArray = false;
-      
+
       if (match) {
         type = match[1];
         isArray = true;
       }
-      
+
       if (containsNodeType(type)) {
         visitsChildren = true;
         let visitor = 'descend';
@@ -242,11 +242,11 @@ expandedTypes
         }
       }
     });
-    
+
     if (!visitsChildren) {
       visitorFile.write(`    // no children\n`);
     }
-    
+
     visitorFile.write(`  }\n`);
     if (i !== types.length - 1) {
       visitorFile.write(`\n`);
