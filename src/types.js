@@ -529,6 +529,17 @@ export type MemberAccessOp = {
   virtual?: boolean;
 };
 
+export type ModuloOp = {
+  type: 'ModuloOp';
+  left: Expression;
+  right: Expression;
+  raw: string;
+  line: number;
+  column: number;
+  range: [ number, number ];
+  virtual?: boolean;
+};
+
 export type MultiplyOp = {
   type: 'MultiplyOp';
   left: Expression;
@@ -1034,6 +1045,7 @@ export type Expression =
   LogicalNotOp |
   LogicalOrOp |
   MemberAccessOp |
+  ModuloOp |
   MultiplyOp |
   NEQOp |
   NewOp |

@@ -41,6 +41,27 @@ describe('Visitor', () => {
     )
   });
 
+  it('handles interesting operators', () => {
+    let visitor = new TrackVisitsVisitor();
+    visitor.visit(parse('a %% b'));
+
+    deepEqual(
+      visitor.visited,
+      [
+        [ '↓', 'Program' ],
+        [ '↓', 'Block' ],
+        [ '↓', 'ModuloOp' ],
+        [ '↓', 'Identifier' ],
+        [ '↑', 'Identifier' ],
+        [ '↓', 'Identifier' ],
+        [ '↑', 'Identifier' ],
+        [ '↑', 'ModuloOp' ],
+        [ '↑', 'Block' ],
+        [ '↑', 'Program' ]
+      ]
+    )
+  });
+
   it('skips missing child nodes', () => {
     let visitor = new TrackVisitsVisitor();
     visitor.visit(parse('if a then 0 # no `else` clause'));

@@ -654,6 +654,20 @@
     ]
   },
   {
+    "name": "ModuloOp",
+    "extends": "Expression",
+    "properties": [
+      {
+        "name": "left",
+        "type": "Expression"
+      },
+      {
+        "name": "right",
+        "type": "Expression"
+      }
+    ]
+  },
+  {
     "name": "MultiplyOp",
     "extends": "Expression",
     "properties": [
