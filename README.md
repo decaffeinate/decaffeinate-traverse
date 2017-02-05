@@ -1,5 +1,7 @@
 # decaffeinate-traverse
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/decaffeinate/decaffeinate-traverse.svg)](https://greenkeeper.io/)
+
 Traverse programs parsed using [decaffeinate-parser][decaffeinate-parser].
 
 ## Install
