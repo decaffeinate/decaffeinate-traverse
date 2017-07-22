@@ -1,5 +1,11 @@
 # decaffeinate-traverse
 
+## DEPRECATED
+
+This project is no longer in use and should be considered deprecated.
+
+---
+
 Traverse programs parsed using [decaffeinate-parser][decaffeinate-parser].
 
 ## Install
