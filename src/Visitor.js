@@ -7,7 +7,7 @@
  */
 
 import BasicVisitor from './BasicVisitor.js';
-import type { ArrayInitialiser, AssignOp, BitAndOp, BitNotOp, BitOrOp, BitXorOp, Block, Bool, BoundFunction, Break, ChainedComparisonOp, Class_, ClassProtoAssignOp, CompoundAssignOp, Conditional, Constructor, Continue, DefaultParam, DeleteOp, DivideOp, DoOp, DynamicMemberAccessOp, EQOp, ExistsOp, ExpOp, Expansion, Expression, ExtendsOp, Float, FloorDivideOp, ForIn, ForOf, Function_, FunctionApplication, GeneratorFunction, GTEOp, GTOp, Herestring, Identifier, InOp, InstanceofOp, Int, JavaScript, LTEOp, LTOp, LeftShiftOp, LogicalAndOp, LogicalNotOp, LogicalOrOp, MemberAccessOp, MultiplyOp, NEQOp, NewOp, Node, Null, ObjectInitialiser, ObjectInitialiserMember, OfOp, PlusOp, PostDecrementOp, PostIncrementOp, PreDecrementOp, PreIncrementOp, Program, ProtoMemberAccessOp, Range, RegExp, RemOp, Rest, Return, SeqOp, SignedRightShiftOp, Slice, SoakedDynamicMemberAccessOp, SoakedFunctionApplication, SoakedMemberAccessOp, Spread, Statement, String, SubtractOp, Super, Switch, SwitchCase, TemplateLiteral, This, Throw, Try, TypeofOp, UnaryExistsOp, UnaryNegateOp, UnaryPlusOp, Undefined, UnsignedRightShiftOp, While, Yield, YieldFrom, Functions, Assignee, Parameter } from './types.js';
+import type { ArrayInitialiser, AssignOp, BitAndOp, BitNotOp, BitOrOp, BitXorOp, Block, Bool, BoundFunction, Break, ChainedComparisonOp, Class_, ClassProtoAssignOp, CompoundAssignOp, Conditional, Constructor, Continue, DefaultParam, DeleteOp, DivideOp, DoOp, DynamicMemberAccessOp, EQOp, ExistsOp, ExpOp, Expansion, Expression, ExtendsOp, Float, FloorDivideOp, ForIn, ForOf, Function_, FunctionApplication, GeneratorFunction, GTEOp, GTOp, Herestring, Identifier, InOp, InstanceofOp, Int, JavaScript, LTEOp, LTOp, LeftShiftOp, LogicalAndOp, LogicalNotOp, LogicalOrOp, MemberAccessOp, ModuloOp, MultiplyOp, NEQOp, NewOp, Node, Null, ObjectInitialiser, ObjectInitialiserMember, OfOp, PlusOp, PostDecrementOp, PostIncrementOp, PreDecrementOp, PreIncrementOp, Program, ProtoMemberAccessOp, Range, RegExp, RemOp, Rest, Return, SeqOp, SignedRightShiftOp, Slice, SoakedDynamicMemberAccessOp, SoakedFunctionApplication, SoakedMemberAccessOp, Spread, Statement, String, SubtractOp, Super, Switch, SwitchCase, TemplateLiteral, This, Throw, Try, TypeofOp, UnaryExistsOp, UnaryNegateOp, UnaryPlusOp, Undefined, UnsignedRightShiftOp, While, Yield, YieldFrom, Functions, Assignee, Parameter } from './types.js';
 
 /**
  * Implements the visitor pattern for decaffeinate-parser ASTs.
@@ -209,6 +209,10 @@ export default class Visitor extends BasicVisitor {
 
       case 'MemberAccessOp':
         this.visitMemberAccessOp(node);
+        break;
+
+      case 'ModuloOp':
+        this.visitModuloOp(node);
         break;
 
       case 'MultiplyOp':
@@ -653,6 +657,11 @@ export default class Visitor extends BasicVisitor {
 
   visitMemberAccessOp(node: MemberAccessOp) {
     this.descend(node.expression);
+  }
+
+  visitModuloOp(node: ModuloOp) {
+    this.descend(node.left);
+    this.descend(node.right);
   }
 
   visitMultiplyOp(node: MultiplyOp) {
